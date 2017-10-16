@@ -24,6 +24,7 @@ import { AlertComponent } from './_directives/index';
 import { AuthGuard } from './_guards/index';
 import { AlertService, AuthenticationService, UserService } from './_services/index';
 import { DataService } from './_services/data.service';
+import { RegisterComponent } from './register/register.component';
 
 
 const appRoutes:Routes = [
@@ -35,6 +36,10 @@ const appRoutes:Routes = [
     path: 'dashboard',
     canActivate: [AuthguardGuard],
     component: DashboardComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   },
   // otherwise redirect to home
   {
@@ -49,7 +54,8 @@ const appRoutes:Routes = [
     HeaderComponent,
     LoginformComponent,
     FooterComponent,
-    DashboardComponent
+    DashboardComponent,
+    RegisterComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
